@@ -3,13 +3,13 @@ pipeline {
 
     stages {
 
-        stage('Clone Code') {
+        stage('Clone Repo') {
             steps {
-                echo "Cloning repository"
+                git 'https://github.com/YOUR_USERNAME/pipeline-project.git'
             }
-        }
-
-        stage('Build') {
+            }
+        
+        stage('Build Java') {
             steps {
                 sh 'javac Hello.java'
             }
